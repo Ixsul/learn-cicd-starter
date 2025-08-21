@@ -30,6 +30,7 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		return
 	}
 	w.WriteHeader(code)
+	// GoSec Fix
 	_, err = w.Write(dat)
 	if err != nil {
 		log.Printf("Write failed: %s", err)

@@ -89,6 +89,7 @@ func main() {
 	v1Router.Get("/healthz", handlerReadiness)
 
 	router.Mount("/v1", v1Router)
+	// GoSec Fix
 	srv := &http.Server{
 		Addr:              ":" + port,
 		Handler:           router,
